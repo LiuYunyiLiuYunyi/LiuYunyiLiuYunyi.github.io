@@ -4,24 +4,42 @@
         <style>
         .all{
           width:1000px;
-          height:700px;
-
+          height:500px;
+        }
+        .left{
+          float: left;
+          width: 500px;
+          margin-left: 100px;
+        }
+        .right{
+          float: right;
+          width: 400px;
+          margin-top: 80px;
         }
         .pic{
           position: relative;
           padding: 5px;
-          width: 420px;
-          height: 600px;
-          float: left;
+          width: 310px;
+          height: 450px;
           cursor:pointer;
         }
+        .p{
+          font-family: serif;
+          font-size: 14px;
+        }
+        .cambiato{
+          font-weight:bold;
+          color: red;
+          transform: scale(1.1);
+          transition: transform 1s;
+                 }
         #p1{
           display: none;
           cursor:pointer;
         }
         #p11{
           display: none;
-          cursor:pointer;
+          cursor:pointer;s
         }
         #p111{
           display: none;
@@ -33,48 +51,43 @@
         #p22{
           display: none;
         }
-        .p{
-        float: right;
-        width: 60%;
-        font-size: 10px;
-        position:relative;
-        top: 10%;
-
+        #p3{
+          font-weight:bold;
+          color: red;
         }
-
         </style>
     <head>
 <body>
 <div class="all">
-<div >
+    <div class="left">
 <img class="pic" id="pic1" src="/img/1.jpg"title="Copertine di rivista De Stijl, Vol. 1, no. 1, Del , October 1917. Design by Vilmos Huszar"/>
-<p id="p1">Copertine di rivista De Stijl, Vol. 1, no. 1, Del , October 1917. Design by Vilmos Huszar</p>
-<p id="p11">De Stijl stands out because its aspirations were as social as they were aesthetic. By ostensibly removing the individualism of the artist in favor of precision and universal harmonies, the De Stijl group believed they were laying the groundwork for a future utopia.
+    </div>
+    <div class="right">
+<p id="p1" class="p">Copertine di rivista De Stijl, Vol. 1, no. 1, Del , October 1917. Design by Vilmos Huszar</p>
+<p id="p11" class="p">De Stijl stands out because its aspirations were as social as they were aesthetic. By ostensibly removing the individualism of the artist in favor of precision and universal harmonies, the De Stijl group believed they were laying the groundwork for a future utopia.
 </p>
-<p id="p111">Their aspirations were total: in order to reform society, their aesthetic aimed to eliminate false distinctions between so-called High art, Aapplied art (such as graphic or product design) and architecture.</p>
-
+<p id="p111" class="p">Their aspirations were total: in order to reform society, their aesthetic aimed to eliminate false distinctions between so-called High art, Aapplied art (such as graphic or product design) and architecture.</p>
 </div>
 </div>
 
 <div class="all">
-<div >
+<div class="left">
 <img class="pic" id="pic2" src="/img/2.jpg" title="Lester Beall, Rural Electri cation Administration, 1937">
 </div>
-<div>
-<p id="p2">Lester Beall, Rural Electri cation Administration, 1937</p>
-<p id="p22">As part of Franklin D. Roosevelt's New Deal program, the Rural Electric Administration (REA) was created in 1935 to bring electricity to impoverished areas where as few as 10 percent of homes had electric power. The REA was able to build on Thomas Edison's success in marketing radios and phonographs to rural communities in the early twentieth century. The poster's core message was simple: radio would relieve the isolation of a lonely homestead. The patriotic color scheme implied that this was in the national interest, creating a more cohesive society through the spread of electrically powered amenities to all regions and social groups.</p>
-
+<div class="right">
+<p id="p2" class="p">Lester Beall, Rural Electri cation Administration, 1937</p>
+<p id="p22" class="p">As part of Franklin D. Roosevelt's New Deal program, the Rural Electric Administration (REA) was created in 1935 to bring electricity to impoverished areas where as few as 10 percent of homes had electric power. The REA was able to build on Thomas Edison's success in marketing radios and phonographs to rural communities in the early twentieth century. The poster's core message was simple: radio would relieve the isolation of a lonely homestead. The patriotic color scheme implied that this was in the national interest, creating a more cohesive society through the spread of electrically powered amenities to all regions and social groups.</p>
 </div>
 </div>
 
 <div class="all">
-<div >
+<div class="left">
 <img class="pic" id="pic3" src="/img/3.jpg" title="Victor Moscoso, Swirley, 1967.">
 </div>
-<div>
-<p id="p3">Victor Moscoso, Swirley, 1967.</p>
-<p id="p333">Moscoso ha creato delle opere che sono esempi classici del picco della poster art psichedelica e del design grafico commerciale, ha cambiato le regole e sviluppato un lessico visivo che ha contrapposto l'arte psichedelica e le arti tradizionali del passato. Le persone hanno avuto l'effetto visivo di assumere droghe durante il giorno.</p>
-<p>Il rapido sviluppo dell'industria aerospaziale statunitense negli anni '60 e' stato uno dei motivi per indurre la cultura hippie: il vigoroso sviluppo dello spazio senza riguardo alla vita e alla morte delle persone, la confusione degli hippies sul presente e la paura del mondo sconosciuto hanno fatto sorgere un misterioso tema principale nel manifesto.</p>
+<div class="right">
+<p id="p3" class="p">Victor Moscoso, Swirley, 1967.</p>
+<p id="p33" class="p">Moscoso ha creato delle opere che sono esempi classici del picco della poster art psichedelica e del design grafico commerciale, ha cambiato le regole e sviluppato un lessico visivo che ha contrapposto l'arte psichedelica e le arti tradizionali del passato. Le persone hanno avuto l'effetto visivo di assumere droghe durante il giorno.</p>
+<p id="p333" class="p">Il rapido sviluppo dell'industria aerospaziale statunitense negli anni '60 e' stato uno dei motivi per indurre la cultura hippie: il vigoroso sviluppo dello spazio senza riguardo alla vita e alla morte delle persone, la confusione degli hippies sul presente e la paura del mondo sconosciuto hanno fatto sorgere un misterioso tema principale nel manifesto.</p>
 
 </div>
 </div>
@@ -87,12 +100,14 @@ function p11_on() {
 }
 function p111_on() {
   $("#p111").fadeIn("p111")
+  $("#p1").addClass("cambiato")
 }
 function introduce2() {
   $("#p2").fadeIn("p2")
 }
 function p22_on() {
   $("#p22").fadeIn("p22")
+  $("#p2").addClass("cambiato")
 }
 $("#pic1").on("mouseover",introduce)
 $("#pic2").on("mouseover",introduce2)
